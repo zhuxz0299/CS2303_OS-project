@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/src/linux-headers-5.15.0-69-generic/include",
+                "/usr/src/linux-headers-5.15.0-69-generic/include/uapi/",
+                "/usr/src/linux-headers-5.15.0-69-generic/arch/x86/include",
+                "/usr/src/linux-headers-5.15.0-69-generic/arch/x86/include/generated"
+            ],
+            "defines": [
+                "__KERNEL__=1",
+                "KBUILD_MODNAME=\"mod_hello\"",
+                "MODULE=1"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
