@@ -1,0 +1,6 @@
+make[1]: Entering directory '/usr/src/linux-headers-5.15.0-69-generic'
+  CC [M]  /home/zxz/final-src-osc10e/ch2/simple.o
+  MODPOST /home/zxz/final-src-osc10e/ch2/Module.symvers
+  CC [M]  /home/zxz/final-src-osc10e/ch2/simple.mod.o
+  LD [M]  /home/zxz/final-src-osc10e/ch2/simple.ko
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.0-69-generic'

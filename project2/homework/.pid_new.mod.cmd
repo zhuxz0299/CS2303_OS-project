@@ -1,0 +1,1 @@
+cmd_/home/zxz/Project/System/final-src-osc10e/ch3/homework/pid_new.mod := { echo  /home/zxz/Project/System/final-src-osc10e/ch3/homework/pid_new.o;  echo; } > /home/zxz/Project/System/final-src-osc10e/ch3/homework/pid_new.mod
