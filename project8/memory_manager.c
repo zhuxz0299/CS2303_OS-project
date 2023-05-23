@@ -49,8 +49,7 @@ int main(int argc, char *argv[])
     int clock = 0, page_fault_count = 0, TLB_hit_count = 0;
 
     // printf("DEBUG: %s\n", argv[1]);
-    fscanf(addr_file, "%d", &logical_address);
-    while (!feof(addr_file))
+    while (fscanf(addr_file, "%d", &logical_address) == 1)
     {
         clock++;
         // parse logical address
@@ -72,7 +71,6 @@ int main(int argc, char *argv[])
 
         // output
         fprintf(output_file, "Virtual address: %d Physical address: %d Value: %d\n", logical_address, physical_address, value);
-        fscanf(addr_file, "%d", &logical_address);
     }
     fclose(addr_file);
     fclose(backing_store_file);
@@ -127,12 +125,12 @@ bool TLB_access(TLB_entry TLB[], int page_number, int *frame_number, int *TLB_hi
     return false;
 }
 
-bool page_table_access(page_table_entry page_table[], TLB_entry TBL[], int page_number, int *frame_number, int *page_fault_count, int clock)
+bool page_table_access(page_table_entry page_table[], TLB_entry TLB[], int page_number, int *frame_number, int *page_fault_count, int clock)
 {
     if (page_table[page_number].valid == 1)
     {
         *frame_number = page_table[page_number].frame_number;
-        TLB_replacement(TBL, page_number, *frame_number, clock);
+        TLB_replacement(TLB, page_number, *frame_number, clock);
         return true;
     }
     (*page_fault_count)++;
